@@ -1,6 +1,6 @@
 import express from "express";
 import { createServer as createViteServer } from "vite";
-import geminiHandler from "./api/gemini.js";
+import chatHandler from "./api/chat.js";
 
 async function startServer() {
   const app = express();
@@ -9,7 +9,7 @@ async function startServer() {
   app.use(express.json());
 
   // API routes FIRST
-  app.post("/api/gemini", geminiHandler);
+  app.post("/api/chat", chatHandler);
 
   // Vite middleware for development
   if (process.env.NODE_ENV !== "production") {

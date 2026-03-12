@@ -4,7 +4,7 @@ const callBackend = async (action: string, payload: any, maxRetries = 4): Promis
   let lastError: any;
   for (let i = 0; i <= maxRetries; i++) {
     try {
-      const res = await fetch('/api/gemini', {
+      const res = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ action, payload })
